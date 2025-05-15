@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saber Cervezero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    :root { --bg:#0d1117; --text:#c9aa6f; --accent:#e0c097; --dark:#0a0d11; --font-h:'Playfair Display', serif; --font-b:'Montserrat', sans-serif; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:var(--font-b); background:var(--bg); color:var(--text); line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    header { background:var(--dark); position:fixed; top:0; width:100%; z-index:1000; }
+    .container { max-width:1200px; margin:0 auto; padding:0 1rem; }
+    nav { display:flex; justify-content:space-between; align-items:center; height:60px; }
+    .logo { display:flex; align-items:center; font-family:var(--font-h); font-size:1.5rem; font-weight:700; color:var(--text); }
+    .logo img { height:32px; margin-right:8px; }
+    .nav-menu { list-style:none; display:flex; gap:1.5rem; }
+    .nav-menu li a { font-weight:600; }
+    .hamburger { display:none; cursor:pointer; flex-direction:column; gap:4px; }
+    .hamburger span { width:25px; height:3px; background:var(--text); }
+    @media(max-width:768px) {
+      .nav-menu { position:absolute; top:60px; left:0; right:0; background:var(--dark); flex-direction:column; align-items:center; max-height:0; overflow:hidden; transition:max-height 0.3s; }
+      .nav-menu.open { max-height:300px; }
+      .hamburger { display:flex; }
+    }
+    section { padding:100px 0 40px; }
+    #hero { background:url('assets/banner.jpg') center/cover no-repeat; height:80vh; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--text); position:relative; }
+    #hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); }
+    .hero-content { position:relative; z-index:1; }
+    .hero-content h1 { font-family:var(--font-h); font-size:2.5rem; margin-bottom:1rem; }
+    .hero-content p { font-size:1.2rem; margin-bottom:1.5rem; }
+    .btn { display:inline-block; padding:0.75rem 1.5rem; background:var(--accent); color:var(--dark); border:none; border-radius:5px; font-weight:600; transition:background 0.3s; }
+    .btn:hover { background:var(--text); }
+    h2 { font-family:var(--font-h); font-size:2rem; margin-bottom:1rem; color:var(--accent); }
+    .grid { display:grid; gap:1.5rem; }
+    .grid-2 { grid-template-columns:1fr 1fr; }
+    .grid-3 { grid-template-columns:repeat(3,1fr); }
+    .grid-4 { grid-template-columns:repeat(4,1fr); }
+    @media(max-width:767px){ .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; } }
+    .feature-card, .pack-card { background:var(--dark); padding:1rem; border-radius:8px; text-align:center; }
+    .feature-card img, .pack-card img { width:100%; height:auto; border-radius:4px; margin-bottom:1rem; }
+    .feature-card h3, .pack-card h3 { font-family:var(--font-h); margin-bottom:0.5rem; }
+    .feature-card p, .pack-card p { margin-bottom:1rem; }
+    .mt-large { margin-top:2rem; }
+    footer { text-align:center; padding:2rem 0; color:var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#hero" class="logo"><img src="assets/logo.png" alt="Logo">Saber Cervezero</a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about">Sobre Nosotros</a></li>
+          <li><a href="#packs">Packs</a></li>
+          <li><a href="maridajes.html">Maridajes</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Descubre el mundo cervecero</h1>
+        <p>Suscripción mensual con cervezas artesanales y maridajes inolvidables.</p>
+        <a href="#packs" class="btn">Suscríbete Ahora</a>
+      </div>
+    </section>
+    <section id="features" class="container">
+      <h2>¿Por qué elegirnos?</h2>
+      <div class="grid grid-4">
+        <div class="feature-card">
+          <img src="assets/A_digital_vector_illustration_features_a_minimalis.png" alt="Calidad y autenticidad">
+          <h3>Calidad</h3>
+          <p>Seleccionamos lo mejor de cada cervecería.</p>
+        </div>
+        <div class="feature-card">
+          <img src="assets/A_digital_vector_illustration_of_a_badge_icon_feat.png" alt="Innovación">
+          <h3>Innovación</h3>
+          <p>Sabores únicos y ediciones especiales.</p>
+        </div>
+        <div class="feature-card">
+          <img src="assets/A_flat_digital_image_features_a_minimalist_golden_.png" alt="Comunidad">
+          <h3>Comunidad</h3>
+          <p>Conéctate con otros amantes de la cerveza.</p>
+        </div>
+        <div class="feature-card">
+          <img src="assets/A_flat_digital_image_of_a_tall_pilsner_glass.png" alt="Sostenibilidad">
+          <h3>Sostenibilidad</h3>
+          <p>Alianzas con cervecerías locales y embalaje eco.</p>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="container">
+      <h2>Sobre Nosotros</h2>
+      <div class="grid grid-2">
+        <div><h3>¿Qué es Saber Cervezero?</h3><p>Plataforma enfocada en promoción y distribución de cervezas artesanales, suscripción mensual y experiencias de maridaje.</p></div>
+        <div><h3>Origen</h3><p>Nacimos de la pasión por la cultura cervecera y la necesidad de acercar selecciones curadas de alta calidad.</p></div>
+      </div>
+      <div class="grid grid-2 mt-large">
+        <div><h3>Misión</h3><p>Conectar al público con la diversidad del mundo cervecero cada mes.</p></div>
+        <div><h3>Visión y valores</h3><p>Ser la referencia digital de cerveza artesanal en América Latina.</p><ul><li>Calidad auténtica</li><li>Innovación y maridaje</li><li>Comunidad cercana</li><li>Sostenibilidad</li></ul></div>
+      </div>
+    </section>
+    <section id="packs" class="container mt-large">
+      <h2>Packs / Suscripciones</h2>
+      <div class="grid grid-3">
+        <div class="pack-card"><img src="assets/pack_clasico.png" alt="Pack Clásico"><h3>Pack Clásico</h3><p>Selección equilibrada de Pale Ale, Lager y Amber Ale.</p><button class="btn">Comprar Ahora</button></div>
+        <div class="pack-card"><img src="assets/pack_foodie.png" alt="Pack Foodie"><h3>Pack Foodie</h3><p>Perfiles de sabor complejos para paladares curiosos.</p><button class="btn">Comprar Ahora</button></div>
+        <div class="pack-card"><img src="assets/pack_exotico.png" alt="Pack Exótico"><h3>Pack Exótico</h3><p>Ediciones limitadas e ingredientes inusuales.</p><button class="btn">Comprar Ahora</button></div>
+      </div>
+    </section>
+  </main>
+  <footer><p>© 2025 Saber Cervezero</p></footer>
+</body>
+</html>
