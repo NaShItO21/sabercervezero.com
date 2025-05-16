@@ -1,5 +1,1 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navMenu = document.getElementById('nav-menu');
-  const hamburger = document.getElementById('hamburger');
-  hamburger.addEventListener('click', () => navMenu.classList.toggle('open'));
-});
+// script placeholder
